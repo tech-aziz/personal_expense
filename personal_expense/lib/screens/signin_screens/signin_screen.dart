@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+import '../signup_screens/signup_screen.dart';
+
+class SignInScreen extends StatefulWidget {
+  const SignInScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignInScreen> createState() => SignInScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class SignInScreenState extends State<SignInScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   @override
@@ -27,12 +30,14 @@ class _LoginScreenState extends State<LoginScreen> {
             controller: _passwordController,
           ),
           ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(() => const SignUpScreen());
+              },
               child: Text('Login',
                   style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
-                      color: Colors.green.withOpacity(0.5))))
+                      color: Colors.green.withOpacity(0.5)))),
         ],
       ),
     );
