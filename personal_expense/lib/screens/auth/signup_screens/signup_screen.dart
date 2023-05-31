@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../home_screens/home_screen.dart';
 import '../signin_screens/signin_screen.dart';
+import 'controllers/signup_controller.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -11,6 +13,8 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  final SignupController _signupController = Get.find();
+
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -119,28 +123,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               InkWell(
                 onTap: () {
+              
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const HomeScreen(),
-                  ));
+                      builder: (context) => const SignInScreen()));
                 },
-                child: InkWell(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const SignInScreen()));
-                  },
-                  child: Container(
-                    height: 45,
-                    width: 140,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(width: 1, color: Colors.grey)),
-                    child: Center(
-                      child: Text('Signup',
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.green.withOpacity(0.5))),
-                    ),
+                child: Container(
+                  height: 45,
+                  width: 140,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(width: 1, color: Colors.grey)),
+                  child: Center(
+                    child: Text('Signup',
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.green.withOpacity(0.5))),
                   ),
                 ),
               ),

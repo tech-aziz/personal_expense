@@ -159,96 +159,98 @@ class _HomeScreenState extends State<HomeScreen> {
         content: SizedBox(
           height: 250,
           width: double.infinity,
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  const SizedBox(
-                      width: 75,
-                      child: Text(
-                        'Purpose: ',
-                        style: TextStyle(fontSize: 17),
-                      )),
-                  Expanded(
-                    child: TextFormField(
-                      keyboardType: TextInputType.name,
-                      decoration: InputDecoration(
-                          labelText: 'Purpose',
-                          labelStyle: const TextStyle(
-                            color: Colors.grey,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                          ),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20))),
-                      controller: _purposeController,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 12,
-              ),
-              Row(
-                children: [
-                  Container(
-                      width: 75,
-                      child: const Text('Amount:',
-                          style: TextStyle(fontSize: 17))),
-                  Expanded(
-                    child: TextFormField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                          labelText: 'Amount',
-                          labelStyle: const TextStyle(
-                            color: Colors.grey,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                          ),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20))),
-                      controller: _amountController,
-                    ),
-                  )
-                ],
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text('Date:', style: TextStyle(fontSize: 17)),
-                  InkWell(
-                      onTap: () => _selectDate,
-                      child: const Text('Select Date',
-                          style: TextStyle(fontSize: 17))),
-                ],
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              InkWell(
-                onTap: () => Navigator.pop(context),
-                child: Container(
-                  height: 45,
-                  width: 140,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      border: Border.all(width: 1, color: Colors.grey)),
-                  child: Center(
-                    child: Text('Add',
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.green.withOpacity(0.5))),
-                  ),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 20,
                 ),
-              )
-            ],
+                Row(
+                  children: [
+                    const SizedBox(
+                        width: 75,
+                        child: Text(
+                          'Purpose: ',
+                          style: TextStyle(fontSize: 17),
+                        )),
+                    Expanded(
+                      child: TextFormField(
+                        keyboardType: TextInputType.name,
+                        decoration: InputDecoration(
+                            labelText: 'Purpose',
+                            labelStyle: const TextStyle(
+                              color: Colors.grey,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20))),
+                        controller: _purposeController,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                Row(
+                  children: [
+                    Container(
+                        width: 75,
+                        child: const Text('Amount:',
+                            style: TextStyle(fontSize: 17))),
+                    Expanded(
+                      child: TextFormField(
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                            labelText: 'Amount',
+                            labelStyle: const TextStyle(
+                              color: Colors.grey,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20))),
+                        controller: _amountController,
+                      ),
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text('Date:', style: TextStyle(fontSize: 17)),
+                    InkWell(
+                        onTap: () => _selectDate,
+                        child: const Text('Select Date',
+                            style: TextStyle(fontSize: 17))),
+                  ],
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                InkWell(
+                  onTap: () => Navigator.pop(context),
+                  child: Container(
+                    height: 45,
+                    width: 140,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        border: Border.all(width: 1, color: Colors.grey)),
+                    child: Center(
+                      child: Text('Add',
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.green.withOpacity(0.5))),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),

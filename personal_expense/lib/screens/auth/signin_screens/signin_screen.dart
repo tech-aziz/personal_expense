@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 import '../../home_screens/home_screen.dart';
 import '../signup_screens/signup_screen.dart';
 
@@ -24,6 +22,7 @@ class SignInScreenState extends State<SignInScreen> {
           automaticallyImplyLeading: false,
           // title: Text('SignUp'),
           centerTitle: true,
+          elevation: 0,
         ),
         body: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -33,16 +32,17 @@ class SignInScreenState extends State<SignInScreen> {
                 const SizedBox(
                   height: 15,
                 ),
-                Image.network(
-                  'https://media.istockphoto.com/id/1281150061/vector/register-account-submit-access-login-password-username-internet-online-website-concept.jpg?s=612x612&w=0&k=20&c=9HWSuA9IaU4o-CK6fALBS5eaO1ubnsM08EOYwgbwGBo=',
-                  width: 350,
-                )
-
-                // Image.asset(
-                //   'assets/images/login.jpg',
+                // Image.network(
+                //   'https://media.istockphoto.com/id/1281150061/vector/register-account-submit-access-login-password-username-internet-online-website-concept.jpg?s=612x612&w=0&k=20&c=9HWSuA9IaU4o-CK6fALBS5eaO1ubnsM08EOYwgbwGBo=',
                 //   width: 350,
                 // ),
-                ,
+
+                Image.asset(
+                  'images/login.jpg',
+                  width: 350,
+                ),
+                
+
                 const SizedBox(
                   height: 15,
                 ),
@@ -53,7 +53,7 @@ class SignInScreenState extends State<SignInScreen> {
                       labelStyle: const TextStyle(
                         color: Colors.grey,
                         fontSize: 16,
-                        fontFamily: "verdana_regular",
+                        
                         fontWeight: FontWeight.w400,
                       ),
                       hintText: "Email",
@@ -75,16 +75,14 @@ class SignInScreenState extends State<SignInScreen> {
                       hintText: "Password",
                       hintStyle: const TextStyle(
                         color: Colors.grey,
-                        fontSize: 16,
-                        fontFamily: "verdana_regular",
+                        fontSize: 16,                      
                         fontWeight: FontWeight.w400,
                       ),
                       labelText: 'Password',
                       //lable style
                       labelStyle: const TextStyle(
                         color: Colors.grey,
-                        fontSize: 16,
-                        fontFamily: "verdana_regular",
+                        fontSize: 16,                    
                         fontWeight: FontWeight.w400,
                       ),
                       suffixIcon: InkWell(
